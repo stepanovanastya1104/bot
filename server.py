@@ -4,7 +4,6 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 import asyncio
 import json
 import random
-import pymorphy2
 
 
 async def solving_puzzles(update, context):
