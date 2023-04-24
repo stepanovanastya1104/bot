@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+   {% if error == 2 %}
+      <h1 style="color: red; height: 45vw;" align="center" >Присутствуют некорректные ходы</h1>
+   {% endif %}
+   {% if error == 1 %}
+      <h1 style="color: red; height: 45vw;" align="center" >Некорректное расширение</h1>
+   {% endif %}
+   {% if error == 0 %}
+      <div align="center">
+      <img src="{{url_for('static', filename='img/board_by_moves.svg')}}" width=720px height=720px></div>
+   {% endif %}
+{% endblock %}
