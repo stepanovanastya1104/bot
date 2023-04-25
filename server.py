@@ -200,6 +200,7 @@ def main():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    rating, hours = get_rating()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
@@ -215,8 +216,8 @@ def login():
             return redirect("/")
         return render_template('login.html',
                                message="Неправильный логин или пароль",
-                               form=form)
-    return render_template('login.html', title='Авторизация', form=form)
+                               form=form, rating=rating, hours=hours)
+    return render_template('login.html', title='Авторизация', form=form, rating=rating, hours=hours)
 
 
 @login_manager.user_loader
