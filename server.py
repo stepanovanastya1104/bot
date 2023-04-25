@@ -208,8 +208,7 @@ def login():
             login_user(user, remember=form.remember_me.data)
             global games_dict
             board = chess.Board()
-            my_stockfish = Stockfish('stockfish_15.1_win_x64_popcnt'
-                                     '/stockfish-windows-2022-x86-64-modern.exe')
+            my_stockfish = Stockfish('stockfish_15.1_win_x64_popcnt/stockfish-windows-2022-x86-64-modern.exe')
             id = current_user.id
             end_game = False
             games_dict[id] = [board, my_stockfish, end_game]
